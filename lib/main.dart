@@ -1,13 +1,10 @@
-import 'dart:html';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_scanner/permissons.dart';
 import 'package:qr_scanner/recorder.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(MaterialApp(home: MyApp()));
 }
 
@@ -42,7 +39,7 @@ class _MyAppState extends State<MyApp> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: ((context) => Recorder(cameras: _cameras)),
+                    builder: ((context) => CameraExampleHome(cameras: _cameras,)),
                   ),
                 );
               })),
